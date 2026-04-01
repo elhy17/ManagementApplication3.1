@@ -1,0 +1,98 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DidiApp"
+             xmlns:fluent="clr-namespace:Avalonia.Themes.Fluent;assembly=Avalonia.Themes.Fluent"
+             x:Class="DidiApp.App"
+             RequestedThemeVariant="Light">
+  <Application.DataTemplates>
+    <local:ViewLocator/>
+  </Application.DataTemplates>
+  
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://DidiApp/Assets/Lang/en.axaml" />
+      </ResourceDictionary.MergedDictionaries>
+
+      <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+          <SolidColorBrush x:Key="BgBrush" Color="#FFFDF7FB"/>
+          <SolidColorBrush x:Key="CardBrush" Color="#FFFFFFFF"/>
+          <SolidColorBrush x:Key="Card2Brush" Color="#FFF8EAF2"/>
+          <SolidColorBrush x:Key="StrokeBrush" Color="#FFE6C3D6"/>
+          <SolidColorBrush x:Key="TextBrush" Color="#FF3B0A2A"/>
+          <SolidColorBrush x:Key="MutedBrush" Color="#FF7A3E63"/>
+          <SolidColorBrush x:Key="InputBrush" Color="#FFFFFBFD"/>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Dark">
+          <SolidColorBrush x:Key="BgBrush" Color="#FF121212"/>
+          <SolidColorBrush x:Key="CardBrush" Color="#FF1E1E1E"/>
+          <SolidColorBrush x:Key="Card2Brush" Color="#FF252525"/>
+          <SolidColorBrush x:Key="StrokeBrush" Color="#FF3A3A3A"/>
+          <SolidColorBrush x:Key="TextBrush" Color="#FFE0E0E0"/>
+          <SolidColorBrush x:Key="MutedBrush" Color="#FFA0A0A0"/>
+          <SolidColorBrush x:Key="InputBrush" Color="#FF2A2A2A"/>
+        </ResourceDictionary>
+      </ResourceDictionary.ThemeDictionaries>
+
+      <SolidColorBrush x:Key="AccentBrush" Color="#FFEC4899" />
+      <SolidColorBrush x:Key="AccentHoverBrush" Color="#FFDB2777" />
+      <SolidColorBrush x:Key="AccentPressedBrush" Color="#FFBE185D" />
+      <SolidColorBrush x:Key="SoftBtnBrush" Color="#33EC4899" />
+      <SolidColorBrush x:Key="SoftBtnHoverBrush" Color="#4DEC4899" />
+    </ResourceDictionary>
+  </Application.Resources>
+  
+  <Application.Styles>
+    <fluent:FluentTheme />
+    <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
+    
+    <Style Selector="TextBlock">
+      <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+      <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style Selector="TextBlock.muted">
+      <Setter Property="Foreground" Value="{DynamicResource MutedBrush}" />
+      <Setter Property="FontSize" Value="13" />
+    </Style>
+    <Style Selector="TextBox,ComboBox,DatePicker">
+      <Setter Property="CornerRadius" Value="14" />
+      <Setter Property="Padding" Value="12,9" />
+      <Setter Property="BorderBrush" Value="{DynamicResource StrokeBrush}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="Background" Value="{DynamicResource InputBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+    </Style>
+    <Style Selector="Button.pink">
+      <Setter Property="Background" Value="{DynamicResource AccentBrush}" />
+      <Setter Property="Foreground" Value="White" />
+      <Setter Property="CornerRadius" Value="14" />
+      <Setter Property="Padding" Value="14,10" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+      <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    <Style Selector="Button.pink:pointerover">
+      <Setter Property="Background" Value="{DynamicResource AccentHoverBrush}" />
+    </Style>
+    <Style Selector="Button.soft">
+      <Setter Property="Background" Value="{DynamicResource SoftBtnBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource StrokeBrush}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+      <Setter Property="CornerRadius" Value="14" />
+      <Setter Property="Padding" Value="14,10" />
+      <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+    <Style Selector="Button.soft:pointerover">
+      <Setter Property="Background" Value="{DynamicResource SoftBtnHoverBrush}" />
+    </Style>
+    <Style Selector="Border.card">
+      <Setter Property="Background" Value="{DynamicResource CardBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource StrokeBrush}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="CornerRadius" Value="20" />
+      <Setter Property="Padding" Value="18" />
+      
+    </Style>
+  </Application.Styles>
+</Application>

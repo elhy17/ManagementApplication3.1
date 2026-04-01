@@ -1,0 +1,15 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:String x:Key="AppTitle">ManagementApp</x:String>
+    <x:String x:Key="NavTasks">Задачи</x:String>
+    <x:String x:Key="NavFocus">Фокус</x:String>
+    <x:String x:Key="NavInsights">Статистика</x:String>
+    <x:String x:Key="NavJournal">Заметки</x:String>
+    <x:String x:Key="NavGoals">Цели</x:String>
+    <x:String x:Key="NavSettings">Настройки</x:String>
+    <x:String x:Key="ThemeToggle">Темная тема</x:String>
+    <x:String x:Key="LanguageSelect">Язык</x:String>
+    <x:String x:Key="StartBtn">Старт</x:String>
+    <x:String x:Key="PauseBtn">Пауза</x:String>
+    <x:String x:Key="StopBtn">Стоп</x:String>
+    <x:String x:Key="DeepWorkTimer">Таймер фокуса</x:String>
+</ResourceDictionary>

@@ -1,0 +1,35 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:DidiApp.ViewModels"
+             x:Class="DidiApp.Views.GoalsView"
+             x:DataType="vm:GoalsViewModel">
+    <StackPanel Spacing="20">
+        <TextBlock Text="{DynamicResource NavGoals}" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+    
+        <Border Classes="card" Padding="40">
+            <Grid ColumnDefinitions="*,*">
+        
+                <Ellipse Grid.Column="0" Width="260" Height="260" Fill="{Binding PieChartBrush}" HorizontalAlignment="Center"/>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="20" Margin="40,0,0,0">
+                    <TextBlock Text="Time Distribution" FontSize="18" FontWeight="SemiBold" Classes="muted"/>
+          
+                    <ItemsControl ItemsSource="{Binding Legend}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="Auto,*,Auto" Margin="0,10">
+                                    <Border Grid.Column="0" Width="16" Height="16" CornerRadius="8" Background="{Binding Color}" VerticalAlignment="Center"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding Label}" Margin="15,0,0,0" VerticalAlignment="Center" FontWeight="SemiBold"/>
+                                    <TextBlock Grid.Column="2" Text="{Binding ValueText}" VerticalAlignment="Center" HorizontalAlignment="Right" Classes="muted"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+          
+                    <TextBlock Text="No data yet! Log some focus sessions." IsVisible="{Binding !Legend.Count}" Classes="muted"/>
+                </StackPanel>
+
+            </Grid>
+        </Border>
+    </StackPanel>
+</UserControl>

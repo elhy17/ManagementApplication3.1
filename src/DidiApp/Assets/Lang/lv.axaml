@@ -1,0 +1,15 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <x:String x:Key="AppTitle">ManagementApp</x:String>
+    <x:String x:Key="NavTasks">Uzdevumi</x:String>
+    <x:String x:Key="NavFocus">Fokusa telpa</x:String>
+    <x:String x:Key="NavInsights">Ieskati</x:String>
+    <x:String x:Key="NavJournal">Piezīmes</x:String>
+    <x:String x:Key="NavGoals">Mērķi</x:String>
+    <x:String x:Key="NavSettings">Iestatījumi</x:String>
+    <x:String x:Key="ThemeToggle">Tumšais režīms</x:String>
+    <x:String x:Key="LanguageSelect">Valoda</x:String>
+    <x:String x:Key="StartBtn">Sākt</x:String>
+    <x:String x:Key="PauseBtn">Pauze</x:String>
+    <x:String x:Key="StopBtn">Apturēt</x:String>
+    <x:String x:Key="DeepWorkTimer">Fokusa Taimeris</x:String>
+</ResourceDictionary>

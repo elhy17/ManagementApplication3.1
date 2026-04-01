@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:DidiApp.ViewModels"
+             x:Class="DidiApp.Views.SettingsView"
+             x:DataType="vm:SettingsViewModel">
+    <StackPanel Spacing="24">
+        <TextBlock Text="{DynamicResource NavSettings}" FontSize="24" FontWeight="Bold"/>
+
+        <Border Classes="card">
+            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,Auto" Margin="10">
+        
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{DynamicResource ThemeToggle}" VerticalAlignment="Center" FontSize="16" FontWeight="SemiBold"/>
+                <ToggleSwitch Grid.Row="0" Grid.Column="1" IsChecked="{Binding IsDarkMode}" />
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Boys Mode (Blue Theme)" VerticalAlignment="Center" FontSize="16" FontWeight="SemiBold" Margin="0,20,0,0"/>
+                <ToggleSwitch Grid.Row="1" Grid.Column="1" IsChecked="{Binding IsBoysMode}" Margin="0,20,0,0"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{DynamicResource LanguageSelect}" VerticalAlignment="Center" FontSize="16" FontWeight="SemiBold" Margin="0,20,0,0"/>
+                <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" Margin="0,20,0,0" Width="160"/>
+        
+            </Grid>
+        </Border>
+    </StackPanel>
+</UserControl>

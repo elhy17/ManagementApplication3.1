@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DidiApp": {
+      "commandName": "Project",
+      "workingDirectory": "$(ProjectDir)"
+    }
+  }
+}

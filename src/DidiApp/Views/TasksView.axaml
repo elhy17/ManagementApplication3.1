@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:DidiApp.ViewModels"
+             x:Class="DidiApp.Views.TasksView"
+             x:DataType="vm:TasksViewModel">
+  <Grid RowDefinitions="Auto,*">
+    <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="0,0,0,20">
+      <TextBlock Grid.Column="0" Text="{DynamicResource NavTasks}" FontSize="24" FontWeight="Bold" />
+      <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="10">
+        <TextBlock Text="Filter View:" VerticalAlignment="Center" Classes="muted"/>
+        <ComboBox ItemsSource="{Binding ViewFilters}" SelectedItem="{Binding ViewFilter}" Width="150"/>
+      </StackPanel>
+    </Grid>
+    
+    <Border Grid.Row="1" Classes="card">
+      <Grid RowDefinitions="Auto,*">
+        <Grid Grid.Row="0" ColumnDefinitions="*,Auto,Auto" Margin="0,0,0,20">
+          <TextBox Grid.Column="0" Text="{Binding NewTaskTitle}" Watermark="Add a new task..." Margin="0,0,10,0"/>
+          <ComboBox Grid.Column="1" ItemsSource="{Binding Categories}" SelectedItem="{Binding SelectedCategory}" Margin="0,0,10,0" Width="150"/>
+          <Button Grid.Column="2" Classes="pink" Content="Add Task" Command="{Binding AddTaskCommand}"/>
+        </Grid>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding DisplayedTasks}" SelectedItem="{Binding SelectedTask}" AutoGenerateColumns="False">
+          <DataGrid.Columns>
+            <DataGridTextColumn Header="Task" Binding="{Binding Title}" Width="*" />
+            <DataGridTextColumn Header="Category" Binding="{Binding Category}" Width="150" />
+            <DataGridTextColumn Header="Logged Focus Time" Binding="{Binding LoggedDuration, StringFormat='{}{0:hh\\:mm\\:ss}'}" Width="180" />
+          </DataGrid.Columns>
+          <DataGrid.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="Delete Task" Command="{Binding DeleteTaskCommand}"/>
+            </ContextMenu>
+          </DataGrid.ContextMenu>
+        </DataGrid>
+      </Grid>
+    </Border>
+  </Grid>
+</UserControl>

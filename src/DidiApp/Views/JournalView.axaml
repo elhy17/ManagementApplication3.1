@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:DidiApp.ViewModels"
+             x:Class="DidiApp.Views.JournalView"
+             x:DataType="vm:JournalViewModel">
+  <Grid ColumnDefinitions="300,*" RowDefinitions="Auto,*">
+    
+    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{DynamicResource NavJournal}" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+    
+    <Border Grid.Row="1" Grid.Column="0" Classes="card" Margin="0,0,20,0">
+      <Grid RowDefinitions="Auto,*">
+        <Button Grid.Row="0" Classes="soft" Content="+ New Note" Command="{Binding NewNoteCommand}" HorizontalAlignment="Stretch" Margin="0,0,0,10"/>
+        <ListBox Grid.Row="1" ItemsSource="{Binding Notes}" SelectedItem="{Binding SelectedNote}" Background="Transparent">
+          <ListBox.ItemTemplate>
+            <DataTemplate>
+              <TextBlock Text="{Binding UpdatedAt, StringFormat='{}{0:g}'}" FontWeight="SemiBold" Padding="10"/>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+      </Grid>
+    </Border>
+
+    <Border Grid.Row="1" Grid.Column="1" Classes="card">
+      <Grid RowDefinitions="*,Auto">
+        <TextBox Grid.Row="0" AcceptsReturn="True" TextWrapping="Wrap" Text="{Binding CurrentNoteContent}" Watermark="Start typing your thoughts here..."/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="10" Margin="0,20,0,0" HorizontalAlignment="Right">
+          <Button Classes="soft" Content="Delete" Command="{Binding DeleteNoteCommand}"/>
+          <Button Classes="pink" Content="Save Note" Command="{Binding SaveCommand}"/>
+        </StackPanel>
+      </Grid>
+    </Border>
+  </Grid>
+</UserControl>

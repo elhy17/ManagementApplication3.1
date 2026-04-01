@@ -1,0 +1,50 @@
+## --- Visual Studio / MSBuild / dotnet ---
+## Build results
+[Dd]ebug/
+[Dd]ebug-NetCore/
+[Rr]elease/
+[Rr]elease-NetCore/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+
+## MSBuild intermediate files
+*.cache
+*.intermediate.manifest
+*.CopyComplete
+*.CoreCompileInputs.cache
+*.cscfg
+*.pubxml
+*.publishproj
+
+## NuGet Packages
+*.nupkg
+# The packages folder can be ignored because dotnet restore regenerates it
+**/[Pp]ackages/*
+!**/[Pp]ackages/repositories.config
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## --- JetBrains Rider ---
+## Ignore Rider-specific project files and user settings
+.idea/
+*.sln.iml
+*.target
+.private/
+
+## --- Avalonia Specific ---
+## Generated files from Avalonia.NameGenerator (if used)
+*.g.cs
+
+## --- OS Specific ---
+.DS_Store
+Thumbs.db
+
+## --- User-specific files ---
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
