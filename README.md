@@ -1,6 +1,6 @@
-# Didi App
+# ManagementApp
 
-Cross-platform Avalonia app for tracking daily and study tasks with an offline SQLite database.
+Cross platform Avalonia app for tracking daily and study tasks with an offline SQLite database
 
 ## Features
 - Daily tasks and study tasks separated into tabs.
@@ -33,3 +33,9 @@ dotnet build src/DidiApp/DidiApp.csproj
 ```
 
 For IntelliJ users, a `.run/DidiApp.run.xml` configuration is included so the run profile is present immediately after cloning.
+-
+Please contact me for any other bugs , my email is `elhaddouryyounes@gmail.com´.
+-
+
+
+
